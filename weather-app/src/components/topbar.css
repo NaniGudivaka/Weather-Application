@@ -1,0 +1,272 @@
+.topbar {
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 32px;
+
+  background-color: #ffffff;
+  border-bottom: 1px solid #e8edf5;
+
+  box-sizing: border-box;
+}
+
+/* This is for Search part CSS */
+
+.search-box {
+  width: 480px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 16px;
+
+  border: 1px solid #dfe6ef;
+  border-radius: 10px;
+
+  background-color: #ffffff;
+
+  color: #64748b;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.search-box:focus-within {
+  border-color: #3b82f6;
+
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.search-box input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #172554;
+
+  font-size: 14px;
+}
+
+.search-box input::placeholder {
+  color: #94a3b8;
+}
+
+/* This is for Actions part CSS */
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+}
+
+/* This is for Location part CSS */
+
+.location-selector {
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 0 16px;
+
+  border: 1px solid #dfe6ef;
+  border-radius: 10px;
+
+  background-color: #ffffff;
+
+  color: #172554;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.location-selector svg:first-child {
+  color: #2563eb;
+}
+
+.location-selector:hover {
+  background-color: #f8fafc;
+}
+
+/* This is for Theme part CSS */
+
+.theme-switcher {
+  display: flex;
+  align-items: center;
+
+  gap: 2px;
+
+  padding: 3px;
+
+  background-color: #f3f6fa;
+
+  border-radius: 8px;
+}
+
+.theme-button {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 6px;
+
+  background: transparent;
+
+  color: #64748b;
+
+  cursor: pointer;
+}
+
+.theme-button.active {
+  background-color: #ffffff;
+
+  color: #2563eb;
+
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.1);
+}
+
+.theme-button:hover {
+  color: #2563eb;
+}
+
+/* This is for Notification part CSS */
+
+.notification-button {
+  position: relative;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  color: #172554;
+
+  cursor: pointer;
+}
+
+.notification-button:hover {
+  color: #2563eb;
+}
+
+.notification-dot {
+  position: absolute;
+
+  top: 8px;
+  right: 8px;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background-color: #ef4444;
+
+  border: 2px solid #ffffff;
+}
+
+/* This is for Profile part CSS */
+
+.user-profile {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding-left: 16px;
+
+  border-left: 1px solid #e5e7eb;
+
+  color: #172554;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.user-avatar {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background-color: #2563eb;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.user-profile svg {
+  color: #64748b;
+}
+
+/* This is for mobile screen responsive design when screen size reduce it will help to look better */
+
+@media (max-width: 1100px) {
+  .search-box {
+    width: 350px;
+  }
+
+  .user-name {
+    display: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .topbar {
+    padding: 0 20px;
+  }
+
+  .search-box {
+    width: 280px;
+  }
+
+  .location-selector span {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .search-box {
+    width: 200px;
+  }
+
+  .location-selector {
+    padding: 0 10px;
+  }
+
+  .theme-switcher {
+    display: none;
+  }
+}
