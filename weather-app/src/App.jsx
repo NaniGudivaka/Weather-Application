@@ -21,11 +21,15 @@ function App() {
           <CurrentWeather />
           <WeatherDetails />
         </div>
+        <div className='dev-text'>
+          <p>Application Is Actively Developing Please Wait For Some Time</p>
+        </div>
 
       </div>
-      <p>Application Is Actively Developing Please Wait For Some Time</p>
+      
 
     </div>
+    
     
     
     </>
