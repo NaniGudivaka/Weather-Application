@@ -7,7 +7,7 @@ import {
   CloudRain,
 } from "lucide-react";
 
-import "./WeatherDetails.css";
+import "./weatherdetails.css";
 
 const weatherDetails = [
   {
