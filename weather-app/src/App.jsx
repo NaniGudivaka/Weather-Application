@@ -22,7 +22,7 @@ function App() {
           <WeatherDetails />
         </div>
         <div className='dev-text'>
-          <p>Application Is Actively Developing Please Wait For Some Time....</p>
+          <p>Application Is Actively Developing Please Wait For Some Time.....</p>
         </div>
 
       </div>
