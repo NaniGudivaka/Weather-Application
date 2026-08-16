@@ -25,3 +25,8 @@
   grid-template-columns: 2fr 1fr;
   gap: 20px;
 }
+
+.dev-text{
+  color: brown;
+  font-size: 30px;
+}
