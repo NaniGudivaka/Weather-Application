@@ -2,6 +2,8 @@
 import './App.css'
 import Sidebar from './components/layouts/Sidebar'
 import Topbar from './components/layouts/Topbar'
+import CurrentWeather from './components/weather/CurrentWeather'
+import WeatherDetails from './components/weather/WeatherDetails'
 
 function App() {
   
@@ -14,9 +16,11 @@ function App() {
       <div className='main-content'>
         <Topbar />
 
-        <main className='page-content'>
-          <h1>Dashboard</h1>
-        </main>
+       
+        <div className='dashboard'>
+          <CurrentWeather />
+          <WeatherDetails />
+        </div>
 
       </div>
 
@@ -27,4 +31,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

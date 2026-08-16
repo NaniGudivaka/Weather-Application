@@ -1,3 +1,6 @@
+
+/* This is for slide bar and topbar placement in APP.jsx */
+
 .app-layout {
   display: flex;
   min-height: 100vh;
@@ -10,4 +13,15 @@
 
 .page-content {
   padding: 32px;
+}
+
+/* This is for Dashboard UI component */
+.dashboard {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
 }

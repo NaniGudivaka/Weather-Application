@@ -8,8 +8,12 @@ import {
 } from "lucide-react";
 
 import "./topbar.css";
+import { useState } from "react";
 
 function Topbar() {
+
+  const[darkMode, setDarkMode] = useState(false);
+  
   return (
     <header className="topbar">
 
@@ -38,12 +42,17 @@ function Topbar() {
         {/* Theme */}
         <div className="theme-switcher">
 
-          <button className="theme-button active">
+          <button className= {`theme-button ${!darkMode ? 'active' : ''} `} onClick={() => setDarkMode(false)}
+            >
             <Sun size={20} />
+
           </button>
 
-          <button className="theme-button">
+          <button className={`theme-button ${darkMode ? 'active' : ''}`} onClick={() => setDarkMode(true)} 
+            >
+
             <Moon size={20} />
+
           </button>
 
         </div>
