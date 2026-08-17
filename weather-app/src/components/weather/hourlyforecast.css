@@ -1,0 +1,130 @@
+.hourly-forecast {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e5eaf2;
+  border-radius: 18px;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+}
+
+.hourly-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.hourly-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #17213d;
+}
+
+.view-hourly-btn {
+  border: none;
+  background: transparent;
+  color: #0866e8;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.view-hourly-btn span {
+  font-size: 20px;
+}
+
+.hourly-list {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.hourly-item {
+  min-width: 72px;
+  flex: 1;
+  text-align: center;
+  padding: 0 8px;
+  border-right: 1px solid #edf0f5;
+  box-sizing: border-box;
+}
+
+.hourly-item:last-child {
+  border-right: none;
+}
+
+.hourly-time {
+  margin: 0 0 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #17213d;
+  white-space: nowrap;
+}
+
+.hourly-icon {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin-bottom: 14px;
+}
+
+.hourly-temperature {
+  margin: 0 0 18px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #17213d;
+}
+
+.hourly-precipitation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #4265a8;
+}
+
+.hourly-precipitation span {
+  font-size: 11px;
+}
+
+.current-hour .hourly-time {
+  color: #0866e8;
+}
+
+.current-hour .hourly-temperature {
+  color: #0866e8;
+}
+
+@media (max-width: 900px) {
+  .hourly-list {
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .hourly-item {
+    min-width: 82px;
+    flex: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .hourly-forecast {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .hourly-header h2 {
+    font-size: 16px;
+  }
+
+  .view-hourly-btn {
+    font-size: 12px;
+  }
+}
