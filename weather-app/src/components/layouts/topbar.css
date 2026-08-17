@@ -270,3 +270,40 @@
     display: none;
   }
 }
+
+
+@media (max-width: 768px) {
+  .topbar {
+    flex-wrap: wrap;
+    height: auto;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .search-box {
+    width: 100%;
+    order: 2;
+  }
+
+  .topbar-actions {
+    width: auto;
+    margin-left: auto;
+    gap: 8px;
+  }
+
+  .location-selector {
+    display: none;
+  }
+
+  .theme-switcher {
+    display: none;
+  }
+
+  .user-name {
+    display: none;
+  }
+
+  .user-profile {
+    gap: 0;
+  }
+}

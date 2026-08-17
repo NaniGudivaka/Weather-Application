@@ -8,6 +8,7 @@
 .main-content {
   flex: 1;
   min-width: 0;
+  width: 100%;
 }
 
 
@@ -58,13 +59,8 @@
 
 @media (max-width: 768px) {
   .dashboard {
-    grid-template-columns: 1fr;
-  }
-
-  .current-weather-section,
-  .weather-details-section,
-  .hourly-forecast-section,
-  .air-quality-section {
-    grid-column: 1;
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
   }
 }
