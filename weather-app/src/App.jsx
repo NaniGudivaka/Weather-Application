@@ -1,12 +1,17 @@
 import './App.css'
+import { useEffect } from 'react'
 import Sidebar from './components/layouts/Sidebar'
 import Topbar from './components/layouts/Topbar'
 import AirQuality from './components/weather/AirQuality'
 import CurrentWeather from './components/weather/CurrentWeather'
 import HourlyForecast from './components/weather/HourlyForecast'
+import SevenDayForecast from './components/weather/SevenDayForecast'
 import WeatherDetails from './components/weather/WeatherDetails'
 
 function App() {
+    useEffect(() => {
+    alert(" Weather Application is currently under development.");
+  }, []);
   return (
     <div className="app-layout">
       <Sidebar />
@@ -29,13 +34,17 @@ function App() {
           </div>
 
           <div className="hourly-forecast-section">
-            
+
             <HourlyForecast />
 
           </div>
 
           <div className="air-quality-section">
             <AirQuality />
+          </div>
+          <div className="seven-day-forecast-section">
+
+            <SevenDayForecast />
           </div>
 
         </div>

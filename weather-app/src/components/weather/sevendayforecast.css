@@ -1,4 +1,4 @@
-.hourly-forecast {
+.seven-day-forecast {
   width: 100%;
   background: #ffffff;
   border: 1px solid #e5eaf2;
@@ -8,123 +8,124 @@
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
 }
 
-.hourly-header {
+.seven-day-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-.hourly-header h2 {
+.seven-day-header h2 {
   margin: 0;
   font-size: 18px;
   font-weight: 600;
   color: #17213d;
 }
 
-.view-hourly-btn {
+.view-seven-day-btn {
   border: none;
   background: transparent;
   color: #0866e8;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
+
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.view-hourly-btn span {
+.view-seven-day-btn span {
   font-size: 20px;
 }
 
-.hourly-list {
-  display: flex;
+.forecast-list {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
   width: 100%;
-  overflow-x: auto;
 }
 
-.hourly-item {
-  min-width: 72px;
-  flex: 1;
+.forecast-item {
   text-align: center;
-  padding: 0 8px;
+  padding: 0 10px;
   border-right: 1px solid #edf0f5;
   box-sizing: border-box;
 }
 
-.hourly-item:last-child {
+.forecast-item:last-child {
   border-right: none;
 }
 
-.hourly-time {
-  margin: 0 0 16px;
-  font-size: 13px;
+.forecast-day {
+  font-size: 14px;
   font-weight: 600;
   color: #17213d;
-  white-space: nowrap;
+  margin-bottom: 4px;
 }
 
-.hourly-icon {
-  height: 42px;
+.forecast-date {
+  font-size: 12px;
+  color: #53617a;
+  margin-bottom: 18px;
+}
+
+.forecast-icon {
+  height: 50px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+
+  font-size: 32px;
   margin-bottom: 14px;
 }
 
-.hourly-temperature {
-  margin: 0 0 18px;
+.forecast-high {
   font-size: 18px;
   font-weight: 600;
   color: #17213d;
+  margin-bottom: 5px;
 }
 
-.hourly-precipitation {
+.forecast-low {
+  font-size: 16px;
+  color: #53617a;
+  margin-bottom: 16px;
+}
+
+.forecast-precipitation {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 4px;
+
   font-size: 12px;
   color: #4265a8;
 }
 
-.hourly-precipitation span {
+.forecast-precipitation span {
   font-size: 11px;
 }
 
-.current-hour .hourly-time {
-  color: #0866e8;
-}
 
-.current-hour .hourly-temperature {
-  color: #0866e8;
-}
+@media (max-width: 768px) {
 
-@media (max-width: 900px) {
-  .hourly-list {
-    overflow-x: auto;
-    scrollbar-width: thin;
-  }
-
-  .hourly-item {
-    min-width: 82px;
-    flex: none;
-  }
-}
-
-@media (max-width: 600px) {
-  .hourly-forecast {
+  .seven-day-forecast {
     padding: 16px;
     border-radius: 14px;
   }
 
-  .hourly-header h2 {
-    font-size: 16px;
+  .forecast-list {
+    display: flex;
+    overflow-x: auto;
   }
 
-  .view-hourly-btn {
-    font-size: 12px;
+  .forecast-item {
+    min-width: 90px;
+    flex: 0 0 90px;
+  }
+
+  .forecast-list::-webkit-scrollbar {
+    height: 5px;
   }
 }

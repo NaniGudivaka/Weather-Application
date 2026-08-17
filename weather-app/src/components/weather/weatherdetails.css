@@ -1,5 +1,5 @@
 .weather-details {
-  padding: 24px;
+  padding: 20px;
 
   background-color: #ffffff;
 
@@ -13,7 +13,7 @@
 /* Header */
 
 .weather-details-header {
-  margin-bottom: 22px;
+  margin-bottom: 10px;
 }
 
 .weather-details-header h2 {
@@ -21,7 +21,7 @@
 
   color: #172554;
 
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
 }
 
@@ -41,7 +41,7 @@
 
   grid-template-columns: repeat(2, 1fr);
 
-  gap: 16px;
+  gap: 15px;
 }
 
 

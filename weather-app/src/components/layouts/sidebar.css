@@ -1,6 +1,10 @@
 .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
   width: 245px;
-  min-height: 100vh;
+  height: 100vh;
 
   display: flex;
   flex-direction: column;
@@ -11,6 +15,8 @@
   border-right: 1px solid #e8edf5;
 
   box-sizing: border-box;
+
+  z-index: 1000;
 }
 
 
