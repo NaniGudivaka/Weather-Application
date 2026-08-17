@@ -1,5 +1,4 @@
-
-/* This is for slide bar and topbar placement in APP.jsx */
+/* Sidebar + Main Content */
 
 .app-layout {
   display: flex;
@@ -11,31 +10,24 @@
   min-width: 0;
 }
 
-.page-content {
-  padding: 32px;
-}
 
-/* This is for Dashboard UI component */
-/* .dashboard {
+/* Dashboard */
+
+.dashboard {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   gap: 20px;
+
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.dev-text{
-  color: brown;
-  font-size: 30px;
-} */
 
-.dashboard {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 20px;
-}
+/* Dashboard Sections */
 
 .current-weather-section {
   grid-column: 1;
@@ -46,5 +38,33 @@
 }
 
 .hourly-forecast-section {
-  grid-column: 1 / -1;
+  grid-column: 1;
+}
+
+.air-quality-section {
+  grid-column: 2;
+}
+
+
+/* Development Message */
+
+.dev-text {
+  color: brown;
+  font-size: 30px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .current-weather-section,
+  .weather-details-section,
+  .hourly-forecast-section,
+  .air-quality-section {
+    grid-column: 1;
+  }
 }
