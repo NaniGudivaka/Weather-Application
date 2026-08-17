@@ -16,7 +16,7 @@
 }
 
 /* This is for Dashboard UI component */
-.dashboard {
+/* .dashboard {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
@@ -29,4 +29,22 @@
 .dev-text{
   color: brown;
   font-size: 30px;
+} */
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.current-weather-section {
+  grid-column: 1;
+}
+
+.weather-details-section {
+  grid-column: 2;
+}
+
+.hourly-forecast-section {
+  grid-column: 1 / -1;
 }
