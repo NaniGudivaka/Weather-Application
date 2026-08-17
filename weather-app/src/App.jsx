@@ -51,7 +51,7 @@ function App() {
 
         <div className="dev-text">
           <p>
-            Application Is Actively Developing Please Wait For Some Time.....
+            Application Is Actively Developing, Sidebar will available in Hamburger for mobile view Please Wait For Some Time.....
           </p>
         </div>
 

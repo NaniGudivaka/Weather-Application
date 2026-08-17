@@ -59,11 +59,24 @@
 
 
 /* Mobile */
-
 @media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+
   .dashboard {
     width: 100%;
+    grid-template-columns: 1fr;
     padding: 12px;
     box-sizing: border-box;
+  }
+
+  .current-weather-section,
+  .weather-details-section,
+  .hourly-forecast-section,
+  .air-quality-section,
+  .seven-day-forecast-section {
+    grid-column: 1;
   }
 }
