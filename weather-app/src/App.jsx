@@ -12,7 +12,28 @@ function App() {
   const [city, setCity] = useState('');
     useEffect(() => {
     alert(" Weather Application is currently under development.");
-  }, []);
+  
+
+
+
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const { latitude, longitude } = position.coords;
+
+      console.log('latitude:', latitude);
+      console.log('longitude:', longitude);
+    },
+    (error) => {
+      console.log("Location permission denied", error.message);
+    }
+  );
+}, []);
+
+
+
+
+
+
   return (
     <div className="app-layout">
       <Sidebar />
