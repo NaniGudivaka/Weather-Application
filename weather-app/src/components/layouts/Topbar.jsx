@@ -10,7 +10,7 @@ import {
 import "./topbar.css";
 import { useState } from "react";
 
-function Topbar({setCity}) {
+function Topbar({ setWeatherData }) {
 
   const[darkMode, setDarkMode] = useState(false);
   const [input, setInput] = useState('');
@@ -28,11 +28,12 @@ function Topbar({setCity}) {
     const data = await response.json();
     if(!response.ok){
       console.log(data.error);
+      return;
     }
     console.log('Backend response', data);
 
     //send city to APP>JSX
-    setCity(data.city)
+    setWeatherData(data)
 
     setSearchCity(data.city);
   }catch(error){
@@ -73,7 +74,7 @@ function Topbar({setCity}) {
         <button className="location-selector">
           <MapPin size={19} />
 
-          <span>{searchCity || 'Hyd, TG'}</span>
+          <span>{searchCity}</span>
 
           <ChevronDown size={17} />
         </button>

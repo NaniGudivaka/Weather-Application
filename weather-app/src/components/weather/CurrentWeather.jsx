@@ -2,8 +2,14 @@ import { MapPin, Thermometer, Droplets, Wind } from "lucide-react";
 
 import "./currentweather.css";
 
-function CurrentWeather({city}) {
-  console.log(city);
+function CurrentWeather({weatherData}) {
+  console.log(weatherData);
+  // if(!weatherData){
+  //   return null;
+  // }
+ 
+
+
   return (
     <section className="current-weather">
       <div className="current-weather-header">
@@ -12,7 +18,7 @@ function CurrentWeather({city}) {
 
           <div className="weather-location">
             <MapPin size={17} />
-            <span>{city || 'HYD TG'}</span>
+            <span>{weatherData?.city || 'Search a city'}</span>
             
           </div>
         </div>
@@ -26,8 +32,11 @@ function CurrentWeather({city}) {
         </div>
 
         <div className="temperature-section">
-          <h2>28°</h2>
-          <p>Sunny</p>
+          <h2>
+            {weatherData?.temperature ?? '--'}
+            {weatherData?.temperatureUnit || ''}
+          </h2>
+          <p>{weatherData?.condition || 'Search for a city'}</p>
         </div>
       </div>
 
@@ -36,7 +45,9 @@ function CurrentWeather({city}) {
           <Thermometer size={18} />
           <div>
             <span>Feels like</span>
-            <strong>30°C</strong>
+            <strong>
+              {weatherData?.feelsLike ?? '--'}
+            </strong>
           </div>
         </div>
 
@@ -44,7 +55,9 @@ function CurrentWeather({city}) {
           <Droplets size={18} />
           <div>
             <span>Humidity</span>
-            <strong>62%</strong>
+            <strong>
+              {weatherData?.humidity ?? '--'}
+            </strong>
           </div>
         </div>
 
@@ -52,7 +65,9 @@ function CurrentWeather({city}) {
           <Wind size={18} />
           <div>
             <span>Wind</span>
-            <strong>14 km/h</strong>
+            <strong>
+              {weatherData?.windSpeed ?? '--'}
+            </strong>
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ import SevenDayForecast from './components/weather/SevenDayForecast'
 import WeatherDetails from './components/weather/WeatherDetails'
 
 function App() {
-  const [city, setCity] = useState('');
+  const [weatherData, setWeatherData] = useState(null);
     useEffect(() => {
     alert(" Weather Application is currently under development.");
   
@@ -22,6 +22,7 @@ function App() {
 
       console.log('latitude:', latitude);
       console.log('longitude:', longitude);
+      console.log(weatherData);
     },
     (error) => {
       console.log("Location permission denied", error.message);
@@ -39,13 +40,13 @@ function App() {
       <Sidebar />
 
       <main className="main-content">
-        <Topbar setCity = {setCity}/>
+        <Topbar setWeatherData = {setWeatherData}/>
 
         <div className="dashboard">
 
           <div className="current-weather-section">
 
-            <CurrentWeather city = {city}/>
+            <CurrentWeather weatherData = {weatherData}/>
 
           </div>
 
