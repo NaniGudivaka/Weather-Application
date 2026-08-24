@@ -2,7 +2,8 @@ import { MapPin, Thermometer, Droplets, Wind } from "lucide-react";
 
 import "./currentweather.css";
 
-function CurrentWeather() {
+function CurrentWeather({city}) {
+  console.log(city);
   return (
     <section className="current-weather">
       <div className="current-weather-header">
@@ -11,7 +12,8 @@ function CurrentWeather() {
 
           <div className="weather-location">
             <MapPin size={17} />
-            <span>Hyd, TS</span>
+            <span>{city || 'HYD TG'}</span>
+            
           </div>
         </div>
 

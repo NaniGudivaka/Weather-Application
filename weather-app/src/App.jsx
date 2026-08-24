@@ -1,5 +1,5 @@
 import './App.css'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Sidebar from './components/layouts/Sidebar'
 import Topbar from './components/layouts/Topbar'
 import AirQuality from './components/weather/AirQuality'
@@ -9,6 +9,7 @@ import SevenDayForecast from './components/weather/SevenDayForecast'
 import WeatherDetails from './components/weather/WeatherDetails'
 
 function App() {
+  const [city, setCity] = useState('');
     useEffect(() => {
     alert(" Weather Application is currently under development.");
   }, []);
@@ -17,13 +18,13 @@ function App() {
       <Sidebar />
 
       <main className="main-content">
-        <Topbar />
+        <Topbar setCity = {setCity}/>
 
         <div className="dashboard">
 
           <div className="current-weather-section">
 
-            <CurrentWeather />
+            <CurrentWeather city = {city}/>
 
           </div>
 

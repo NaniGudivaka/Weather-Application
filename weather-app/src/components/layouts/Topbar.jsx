@@ -10,15 +10,15 @@ import {
 import "./topbar.css";
 import { useState } from "react";
 
-function Topbar() {
+function Topbar({setCity}) {
 
   const[darkMode, setDarkMode] = useState(false);
-  const [city, setCity] = useState('');
+  const [input, setInput] = useState('');
   const [searchCity, setSearchCity] = useState('');
 
  async function handleSearch(){
 
-  const trimmedCity = city.trim();
+  const trimmedCity = input.trim();
 
   if(!trimmedCity) {
     return;
@@ -30,6 +30,9 @@ function Topbar() {
       console.log(data.error);
     }
     console.log('Backend response', data);
+
+    //send city to APP>JSX
+    setCity(data.city)
 
     setSearchCity(data.city);
   }catch(error){
@@ -44,13 +47,17 @@ function Topbar() {
 
       {/* Search */}
       <div className="search-box">
+        <button type="button"
+        onClick={handleSearch}
+        className="search-button">
         <Search size={20} strokeWidth={2} />
+        </button>
 
         <input
           type="text"
           placeholder="Search for city, e.g., Hyderabad"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) =>{
             if(e.key === 'Enter'){
               handleSearch();
