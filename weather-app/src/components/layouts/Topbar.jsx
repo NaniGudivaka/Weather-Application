@@ -13,6 +13,31 @@ import { useState } from "react";
 function Topbar() {
 
   const[darkMode, setDarkMode] = useState(false);
+  const [city, setCity] = useState('');
+  const [searchCity, setSearchCity] = useState('');
+
+ async function handleSearch(){
+
+  const trimmedCity = city.trim();
+
+  if(!trimmedCity) {
+    return;
+  }try{
+    const response = await fetch(`http://localhost:3000/api/weather?city=${encodeURIComponent(trimmedCity)}`);
+
+    const data = await response.json();
+    if(!response.ok){
+      console.log(data.error);
+    }
+    console.log('Backend response', data);
+
+    setSearchCity(data.city);
+  }catch(error){
+    console.log('Error connecting to backend:', error);
+
+  }
+
+  };
   
   return (
     <header className="topbar">
@@ -24,6 +49,13 @@ function Topbar() {
         <input
           type="text"
           placeholder="Search for city, e.g., Hyderabad"
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+          onKeyDown={(e) =>{
+            if(e.key === 'Enter'){
+              handleSearch();
+            }
+          }}
         />
       </div>
 
@@ -34,7 +66,7 @@ function Topbar() {
         <button className="location-selector">
           <MapPin size={19} />
 
-          <span>Hyd, TG</span>
+          <span>{searchCity || 'Hyd, TG'}</span>
 
           <ChevronDown size={17} />
         </button>
