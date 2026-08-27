@@ -23,7 +23,7 @@ function Topbar({ setWeatherData }) {
   if(!trimmedCity) {
     return;
   }try{
-    const response = await fetch(`https://weather-application-backend-jxvm.onrender.com/api/weather${encodeURIComponent(trimmedCity)}`);
+    const response = await fetch(`https://weather-application-backend-jxvm.onrender.com/api/weather/${encodeURIComponent(trimmedCity)}`);
 
     const data = await response.json();
     if(!response.ok){
